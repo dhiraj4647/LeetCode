@@ -14,7 +14,7 @@ class Solution {
         while(head != null && head.val ==val){
             head=head.next;
         }
-        
+
         ListNode listNode = head;
         ListNode temp = head;
         while(listNode!=null){
