@@ -20,7 +20,7 @@ class Solution {
     
     public ListNode mergeInBetween(ListNode list1, int a, int b, ListNode list2) {
         int list1Length = getLength(list1);
-        if(a>list1Length || b>list1Length)return null;
+        
         ListNode temp1 = null;
         ListNode temp2 = null;
         ListNode temp = list1;
