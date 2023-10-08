@@ -9,23 +9,20 @@
  * }
  */
 class Solution {
-    public int getLength(ListNode head){
-        int k =0;
-        while (head != null){
-            head = head.next;
-            k++;
-        }
-        return k;
-    }
-    
+        
     public ListNode rotateRight(ListNode head, int k) {
 
+        int length =0;
         ListNode temp1 = head;
         ListNode temp2 = head;
-        int length = getLength(temp1);
-        if(length ==0)return null;
+        //find the length of linked list
+        while (temp1 != null){
+            temp1 = temp1.next;
+            length++;
+        }
+        if(length!=0)length = k%length;
+        else return  null;
         temp1 = head;
-        length = k%length;
        while (temp2 != null && length > 0){
             temp2 = temp2.next;
             length--;
