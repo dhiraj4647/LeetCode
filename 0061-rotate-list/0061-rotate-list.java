@@ -17,6 +17,7 @@ class Solution {
         }
         return k;
     }
+    
     public ListNode rotateRight(ListNode head, int k) {
 
         ListNode temp1 = head;
@@ -29,7 +30,7 @@ class Solution {
             temp2 = temp2.next;
             length--;
         }
-        if(length!=0)return null;
+        
         while(temp2.next !=null){
             temp2 = temp2.next;
             temp1 = temp1.next;
