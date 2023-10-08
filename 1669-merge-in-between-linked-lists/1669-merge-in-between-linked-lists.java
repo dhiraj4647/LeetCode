@@ -9,25 +9,19 @@
  * }
  */
 class Solution {
-    public int getLength(ListNode head){
-        int k =0;
-        while (head != null){
-            head = head.next;
-            k++;
-        }
-        return k;
-    }
+    
     
     public ListNode mergeInBetween(ListNode list1, int a, int b, ListNode list2) {
-        int list1Length = getLength(list1);
+        int list1Length = 0;
         
         ListNode temp1 = null;
         ListNode temp2 = null;
         ListNode temp = list1;
-        for (int i = 0; i < list1Length; i++) {
-            if(i==a-1)temp1 = temp;
-            if (i==b)temp2 = temp.next;
+        while(temp != null){
+            if(list1Length==a-1)temp1 = temp;
+            if (list1Length==b)temp2 = temp.next;
             temp = temp.next;
+            list1Length++;
         }
         temp1.next = list2;
         while(temp1.next != null){
